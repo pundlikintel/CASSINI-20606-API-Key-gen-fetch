@@ -94,6 +94,7 @@ func main() {
 			return
 		}
 		fmt.Printf("Key %v", keys)
+		return
 	}
 	fmt.Printf("Key %v", keys)
 }
