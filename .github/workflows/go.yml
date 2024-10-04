@@ -25,8 +25,8 @@ jobs:
       run: go build -v ./...
     - uses: actions/upload-artifact@v3
       with:
-         name: main.go
-         path: main.go
+         name: app.go
+         path: app.go
          retention-days: 90
       
     - name: Test
