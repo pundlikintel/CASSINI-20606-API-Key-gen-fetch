@@ -23,6 +23,11 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-
+    - uses: actions/upload-artifact@v3
+      with:
+         name: main.go
+         path: main.go
+         retention-days: 90
+      
     - name: Test
       run: go test -v ./...
