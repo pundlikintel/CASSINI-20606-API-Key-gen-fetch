@@ -83,10 +83,7 @@ func main() {
 	}
 	logrus.Infof("JWT: %v", jwt)
 	keys, err := api_key.GetApiKeys(ctx, jwt, *environment, *serviceId)
-	if err != nil {
-		return
-	}
-	if len(keys) == 0 {
+	if err != nil || len(keys) == 0 {
 		logrus.Errorf("No keys found, Crating")
 		keys, err := api_key.CreateApiKey(ctx, jwt, *environment, *serviceId, *productId)
 		if err != nil {

@@ -3,12 +3,12 @@ Running tool
 Step 1. 
     Build Tool
 ```    
-    go build ./src
+    go build -o partnerkeygen .
 ```
 Step 2.
     Run tool
 ```
-    ./outoput -issuer="<value>" -sec_kid="<value>" -aws_key_id="<value>" -aws_secret_key="<value>" -aws_token="<value>" -region="<value>" -tenant_id="<value>" -user_id="<value>" -environment="<value>" -product_id="<value>" -service_id="<value>"
+    ./partnerkeygen -issuer="<value>" -sec_kid="<value>" -aws_key_id="<value>" -aws_secret_key="<value>" -aws_token="<value>" -region="<value>" -tenant_id="<value>" -user_id="<value>" -environment="<value>" -product_id="<value>" -service_id="<value>"
 ```
   
 | Flag           | Meaning                                                    |

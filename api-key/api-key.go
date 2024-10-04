@@ -97,9 +97,17 @@ func CreateApiKey(ctx context.Context, jwt, env, serviceId, productId string) (s
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 	client := &http.Client{Transport: tr}
-	request := map[string]string{"product_id": productId, "name": "parter_api_3"}
-	reqByt, _ := json.Marshal(request)
-	req, _ := http.NewRequest("POST", url, bytes.NewBuffer(reqByt))
+	request := map[string]string{"product_id": productId, "name": "parter_api_4"}
+	reqByt, err := json.Marshal(request)
+	if err != nil {
+		log.Error("Failed to read request body")
+		return "", err
+	}
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer(reqByt))
+	if err != nil {
+		log.Error("Failed to read make call")
+		return "", err
+	}
 	req.Header.Set("x-amber-api-token", jwt)
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
