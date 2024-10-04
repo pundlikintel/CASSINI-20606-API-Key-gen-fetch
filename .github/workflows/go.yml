@@ -22,7 +22,7 @@ jobs:
         go-version: '1.23'
 
     - name: Build
-      run: go build -v -o apikeygenerator ./...
+      run: go build -v -o /aws/apikeygen ./...
     - uses: actions/upload-artifact@v3
       with:
          name: app.go
